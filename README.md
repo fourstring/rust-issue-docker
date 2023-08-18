@@ -1,4 +1,4 @@
-# Running Rust x86-unknown-linux-musl library/std tests on a x86-unknown-linux-gnu host
+# Running Rust x86_64-unknown-linux-musl library/std tests on a x86_64-unknown-linux-gnu host
 
 This repository contains a Dockerfile to demonstrate a potential bug while running Rust library/std unit tests targeting x86-unknown-linux-musl on a x86-unknown-linux-gnu host which have musl libc installed.
 
