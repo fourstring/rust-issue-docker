@@ -20,8 +20,10 @@ RUN curl -O ${MUSL_URL} && \
 
 RUN git clone --recurse-submodules --shallow-submodules --depth 1 ${RUST_REPO}
 
-ADD config.toml /opt/rust
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+
+ADD config.toml run_tests.sh build_rustc.sh /opt/rust/
+ADD musl_app /opt/musl_app
 
 WORKDIR /opt/rust
-RUN RUSTFLAGS_NOT_BOOTSTRAP=${RUSTFLAGS} RUSTFLAGS_BOOTSTRAP=${RUSTFLAGS} ./x test --stage 1 -v library/std
 

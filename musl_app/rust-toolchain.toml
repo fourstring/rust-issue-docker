@@ -1,0 +1,2 @@
+[toolchain]
+path = "/opt/rust/build/host/stage1"
